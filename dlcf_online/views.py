@@ -68,23 +68,22 @@ def search(request):
 
         if query:
             filter_conditions |= Q(first_name__icontains=query) | Q(last_name__icontains=query)
-            print(query)
+
         if location:
             filter_conditions |= Q(location__icontains=location)
-            print(location)
+
         if hostel:
             filter_conditions |= Q(hostel__icontains=hostel)
-            print(hostel)
+
         # Apply the filter conditions to the queryset
         if filter_conditions:
             members = members.filter(filter_conditions)
-            print(filter_conditions)
+
         # Now you can use 'members' for further processing or return the results
         context = {
             'members': members,
         }
 
-        print(members)
 
         return render(request, 'dlcf/results.html', context)
 

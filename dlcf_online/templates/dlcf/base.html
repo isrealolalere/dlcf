@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block style %}
+    {% endblock style %}
 
     <!--MDB JAVASCRIPT CODE-->
     <script src="{% static 'mdb5\js\mdb.min.js' %}"></script>
@@ -55,7 +57,7 @@
         .topnav a {
             float: left;
             display: block;
-            color: #f2f2f2; !important
+            color: #f2f2f2 !important;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -69,7 +71,7 @@
 
         .topnav a.active {
             background-color: #04AA6D;
-            color: white; !important
+            color: white !important;
         }
 
         .topnav .icon {
@@ -109,7 +111,7 @@
         }
 
         #myTopnav a{
-            color:white !important
+            color:white !important;
         }
 
         .logo {
@@ -117,10 +119,6 @@
             margin:auto;
             margin-bottom:30px;
         }
-
-        {% block style %}
-        {% endblock style %}
-
 
     </style>
 
@@ -159,8 +157,9 @@ $(document).ready(function(){
     $('.dropdown-toggle').dropdown(); // Initialize dropdowns
 });
 
+
+</script>
 {% block scripts %}
 {% endblock scripts %}
-</script>
 
 </html>
